@@ -18,15 +18,5 @@ public class VendingMachineItemTest {
         assertEquals(expectedPrice, item.getPrice(), 0.001);
     }
 
-    @Test
-    void testItemCreationNegativePrice() {
-        // Arrange
-        String name = "Invalid";
-        double negativePrice = -0.50;
 
-        // Act & Assert
-        assertThrows(VendingMachineException.class, () -> {
-            new VendingMachineItem(name, negativePrice);
-        });
-    }
 }

@@ -102,4 +102,26 @@ public class VendingMachineTest {
         assertEquals(3.50, change, 0.001);
         assertEquals(0.0, machine.getBalance(), 0.001);
     }
+
+    @Test 
+    void testInsertMoney_LessThanOne_ThrowsException() {
+        // Arrange 
+        VendingMachine vendingMachine = new VendingMachine();
+        
+        assertThrows(VendingMachineException.class, () -> {
+            vendingMachine.insertMoney(0.99);
+        });
+    }
+
+    @Test
+    void testInsertMoney_GreaterThanOne_UpdatesBalance() throws VendingMachineException {
+        // Arrange
+        VendingMachine vendingMachine = new VendingMachine();
+        
+        // Act
+        vendingMachine.insertMoney(5.00);
+        
+        // Assert
+        assertEquals(5.00, vendingMachine.getBalance(), 0.001); 
+    }
 }
