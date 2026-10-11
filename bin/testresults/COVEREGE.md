@@ -13,4 +13,3 @@ In my test suite, `testMakePurchase()` is the only method that exercises this de
 
 // 4. Test-Sensitivity Experiment 
 When I intentally changed (this.balance >= item.getPrice() to (this.balance <= item.getPrice(), it caused few of my test cases to fail which shows that that the test suite is sensitive to logic regressions and capable of detecting defects. 
-
