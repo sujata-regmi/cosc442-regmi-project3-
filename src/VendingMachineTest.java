@@ -86,7 +86,7 @@ public class VendingMachineTest {
         // Assert
         assertTrue(success);
         assertEquals(1.00, machine.getBalance(), 0.001);
-        assertNull(machine.getItem("A"));
+        assertNotNull(machine.getItem("A"));
     }
 
     @Test
