@@ -158,7 +158,11 @@ public class VendingMachine {
 	 *                                 amount is < 0
 	 */
 	public void insertMoney(double amount) throws VendingMachineException {
+<<<<<<< HEAD
 		if (amount < 0)
+=======
+		if (amount < 1)
+>>>>>>> b1c0d71865215ed224cbfc33f3e1948dc81e9ff3
 			throw new VendingMachineException(VendingMachine.INVALID_AMOUNT_MESSAGE);
 		this.balance += amount;
 	}
@@ -175,8 +179,13 @@ public class VendingMachine {
 	 * @return The balance in the vending machine
 	 */
 	public double getBalance() {
+<<<<<<< HEAD
 		return this.balance;
 	}
+=======
+    return balance;
+}
+>>>>>>> b1c0d71865215ed224cbfc33f3e1948dc81e9ff3
 
 	/**
 	 * This function attempts to purchase the item with the given code from the
@@ -193,8 +202,12 @@ public class VendingMachine {
 	public boolean makePurchase(String code) {
 		boolean returnCode = false;
 		VendingMachineItem item = getItem(code);
+<<<<<<< HEAD
 		if ((item != null) && (this.balance >= item.getPrice())) {
 			removeItem(code);
+=======
+		if ((item != null) && (this.balance >= item.getPrice())) { 
+>>>>>>> b1c0d71865215ed224cbfc33f3e1948dc81e9ff3
 			this.balance -= item.getPrice();
 			returnCode = true;
 		}

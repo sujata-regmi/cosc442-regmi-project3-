@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
+<<<<<<< HEAD
 
 import org.junit.jupiter.api.Test;
 
@@ -24,3 +25,26 @@ class VendingMachineItemTest {
 		assertEquals("Price cannot be less than zero", ex.getMessage());
 	}
 }
+=======
+import org.junit.jupiter.api.Test;
+
+public class VendingMachineItemTest {
+    
+
+    @Test
+    void testItemCreationAndGetters() {
+        // Arrange
+        String expectedName = "Soda";
+        double expectedPrice = 1.50;
+
+        // Act
+        VendingMachineItem item = new VendingMachineItem(expectedName, expectedPrice);
+
+        // Assert
+        assertEquals(expectedName, item.getName());
+        assertEquals(expectedPrice, item.getPrice(), 0.001);
+    }
+
+
+}
+>>>>>>> b1c0d71865215ed224cbfc33f3e1948dc81e9ff3
