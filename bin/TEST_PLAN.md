@@ -1,0 +1,10 @@
+# Vending Machine Test Plan
+
+| Method / Behavior | Valid Case(s) | Exception / Invalid Case(s) | Boundary Case | Oracle / Expected Result | Related JUnit Test(s) |
+|AddItem  | Add a valid VendingMachineItem to an empty slot| Adding an item to a slot that is already occupied |Accessing slot bounds at index 0 ("A") and index 3 ("D") | Item is successfully stored in the specified slot. Throws VendingMachineException if occupied or invalid | testAddItem |
+|GetBalance| Retrieve the current balance after initialization or currency insertion | N/A | Initial balance starting at 0.0 or checking balance after zero insertions | Returns the exact current numeric double value of the machine's balance | testGetBalance |
+|GetItem| Retrieve an item from a valid, occupied slot | Passing an invalid slot code string | Querying an empty slot if no item has been added | Returns the correct VendingMachineItem object, or null if empty. Throws exception on invalid code | testGetItem |
+|InsertMoney| Insert a valid positive currency amount | Inserting a negative money amount | Inserting 0.0 or amounts right at the negative boundary | Balance increments correctly by the inserted amount. Throws VendingMachineException for negative values | testInsertMoney |
+| RemoveItem | Remove an item from a valid, occupied slot | Removing an item from an already empty slot | Attempting removal at slot index bounds ("A" through "D") | Returns the removed item object and clears the slot. Throws VendingMachineException if slot is empty | testRemoveItem |
+| MakePurchase | Purchase an item when balance is greater than or equal to item price | Attempting purchase from an empty slot or with insufficient funds | Purchasing an item when balance matches price exactly | Returns true, subtracts item price from balance, and clears slot. Returns false otherwise | testMakePurchase |
+| ReturnChanges | Return balance after transactions | N/A | Return change when balance is 0 | Returns the total current balance and resets the machinebalance to 0 | testReturnChange |
